@@ -317,3 +317,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2024-12-26]
 - chore: Final production release with all features complete
+
+## [2025-09-15]
+- refactor: Optimize Hardhat config for BNB Chain deployment
