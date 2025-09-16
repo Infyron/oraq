@@ -320,3 +320,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-15]
 - refactor: Optimize Hardhat config for BNB Chain deployment
+
+## [2025-09-16]
+- docs: Add comprehensive comments to SoraOracle contract
