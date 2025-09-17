@@ -329,3 +329,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-17]
 - feat: Add batch operations support to OrderBookMarket
+
+## [2025-09-17]
+- perf: Optimize AMMMarket liquidity calculations
