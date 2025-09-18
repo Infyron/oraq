@@ -332,3 +332,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-17]
 - perf: Optimize AMMMarket liquidity calculations
+
+## [2025-09-18]
+- feat: Enhance PancakeTWAPOracle with manipulation resistance
