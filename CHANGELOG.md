@@ -338,3 +338,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-19]
 - perf: Reduce gas costs in BatchOracleOperations by 30%
+
+## [2025-09-19]
+- feat: Add batch payout verification to BatchPayoutDistributor
