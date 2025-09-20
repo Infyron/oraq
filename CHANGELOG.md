@@ -341,3 +341,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-19]
 - feat: Add batch payout verification to BatchPayoutDistributor
+
+## [2025-09-20]
+- feat: Integrate GPT-4 for automated market resolution
