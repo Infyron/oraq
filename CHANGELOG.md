@@ -344,3 +344,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-20]
 - feat: Integrate GPT-4 for automated market resolution
+
+## [2025-09-22]
+- feat: Add conditional market linking to ConditionalMarket
