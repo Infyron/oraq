@@ -347,3 +347,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-22]
 - feat: Add conditional market linking to ConditionalMarket
+
+## [2025-09-23]
+- feat: Add proposal voting system to DAOGovernance
