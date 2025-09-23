@@ -350,3 +350,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-23]
 - feat: Add proposal voting system to DAOGovernance
+
+## [2025-09-23]
+- feat: Implement reputation scoring in OracleStaking
