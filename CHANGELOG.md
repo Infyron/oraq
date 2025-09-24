@@ -353,3 +353,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-23]
 - feat: Implement reputation scoring in OracleStaking
+
+## [2025-09-24]
+- security: Add staking requirements to DisputeResolution
