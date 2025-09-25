@@ -356,3 +356,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-24]
 - security: Add staking requirements to DisputeResolution
+
+## [2025-09-25]
+- feat: Add performance metrics tracking to OracleReputationTracker
