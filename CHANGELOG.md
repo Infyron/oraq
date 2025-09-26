@@ -359,3 +359,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-25]
 - feat: Add performance metrics tracking to OracleReputationTracker
+
+## [2025-09-26]
+- feat: Implement 5% referral rewards in ReferralRewards
