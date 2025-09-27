@@ -362,3 +362,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-26]
 - feat: Implement 5% referral rewards in ReferralRewards
+
+## [2025-09-27]
+- feat: Add multi-chain support to CrossChainBridge
