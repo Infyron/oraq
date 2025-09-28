@@ -365,3 +365,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-27]
 - feat: Add multi-chain support to CrossChainBridge
+
+## [2025-09-28]
+- docs: Expand README with architecture details
