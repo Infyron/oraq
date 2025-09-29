@@ -368,3 +368,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-28]
 - docs: Expand README with architecture details
+
+## [2025-09-29]
+- feat: Add TypeScript SDK with React hooks
