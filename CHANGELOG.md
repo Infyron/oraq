@@ -377,3 +377,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-09-30]
 - perf: Add 10x parallel transaction processing with MultiWalletS402Pool
+
+## [2025-10-01]
+- feat: Add GPT-4 powered API discovery to SelfExpandingResearchAgent
