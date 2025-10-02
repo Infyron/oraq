@@ -380,3 +380,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-01]
 - feat: Add GPT-4 powered API discovery to SelfExpandingResearchAgent
+
+## [2025-10-02]
+- security: Add TLS certificate verification to TLSVerifier
