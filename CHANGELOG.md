@@ -383,3 +383,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-02]
 - security: Add TLS certificate verification to TLSVerifier
+
+## [2025-10-03]
+- feat: Add payment verification middleware for s402
