@@ -389,3 +389,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-04]
 - feat: Build React UI for market creation
+
+## [2025-10-05]
+- feat: Add mainnet deployment script with verification
