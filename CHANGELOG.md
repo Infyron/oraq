@@ -401,3 +401,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-08]
 - docs: Update README with mainnet deployment addresses
+
+## [2025-10-09]
+- perf: Optimize gas usage in market creation
