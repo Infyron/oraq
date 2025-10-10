@@ -404,3 +404,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-09]
 - perf: Optimize gas usage in market creation
+
+## [2025-10-10]
+- security: Add input validation to all market contracts
