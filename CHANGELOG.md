@@ -407,3 +407,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-10]
 - security: Add input validation to all market contracts
+
+## [2025-10-11]
+- docs: Add API documentation for SDK
