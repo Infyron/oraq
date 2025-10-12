@@ -410,3 +410,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-11]
 - docs: Add API documentation for SDK
+
+## [2025-10-12]
+- feat: Add responsive design to market cards
