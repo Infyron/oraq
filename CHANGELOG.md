@@ -413,3 +413,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-12]
 - feat: Add responsive design to market cards
+
+## [2025-10-13]
+- test: Add end-to-end tests for market creation flow
