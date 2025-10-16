@@ -422,3 +422,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-15]
 - perf: Reduce bundle size by 40% with code splitting
+
+## [2025-10-16]
+- feat: Add market search and filtering
