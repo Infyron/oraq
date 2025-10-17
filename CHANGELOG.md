@@ -425,3 +425,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-16]
 - feat: Add market search and filtering
+
+## [2025-10-17]
+- fix: Resolve memory leak in oracle client
