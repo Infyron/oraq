@@ -428,3 +428,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-17]
 - fix: Resolve memory leak in oracle client
+
+## [2025-10-18]
+- docs: Add comprehensive deployment guide
