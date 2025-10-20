@@ -434,3 +434,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-19]
 - perf: Implement lazy loading for market components
+
+## [2025-10-20]
+- security: Add CSRF protection to API endpoints
