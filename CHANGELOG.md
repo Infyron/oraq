@@ -437,3 +437,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-20]
 - security: Add CSRF protection to API endpoints
+
+## [2025-10-21]
+- test: Add comprehensive integration test suite
