@@ -446,3 +446,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-23]
 - chore: Clean up unused code and optimize imports
+
+## [2025-10-24]
+- feat: Add custom token parameters to TokenFactory
