@@ -449,3 +449,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-24]
 - feat: Add custom token parameters to TokenFactory
+
+## [2025-10-25]
+- feat: Implement time series analysis in TimeSeriesMarket
