@@ -455,3 +455,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-26]
 - perf: Optimize database queries in indexer
+
+## [2025-10-27]
+- chore: Finalize v5.0.0 for production deployment
