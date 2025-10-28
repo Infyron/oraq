@@ -458,3 +458,6 @@ All notable changes to this project will be documented in this file.
 
 ## [2025-10-27]
 - chore: Finalize v5.0.0 for production deployment
+
+## [2025-10-28]
+- chore: Bump version to 5.0.0 - Production release
