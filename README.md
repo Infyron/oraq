@@ -52,7 +52,7 @@ x402 Oracle Infrastructure, built by **ORAQ**, is a **robust oracle system** tha
 npm install @x402-oracle/sdk
 ```
 
-### Create Your First x402 Oracle
+### Create Your First x402 Protocol Oracle
 
 ```typescript
 import { x402OracleSDK } from "@x402-oracle/sdk";
@@ -63,7 +63,7 @@ const sdk = new x402OracleSDK({
   s402FacilitatorAddress: "0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3",
 });
 
-// Transform a Web2 API into an x402 oracle
+// Transform a Web2 API into an x402 protocol oracle
 const oracle = await sdk.createOracle({
   name: "CoinGecko Price Oracle",
   apiEndpoint: "https://api.coingecko.com/api/v3/simple/price",
@@ -77,7 +77,7 @@ const oracle = await sdk.createOracle({
   },
 });
 
-// Query the oracle with x402 payment
+// Query the oracle with x402 protocol payment
 const price = await oracle.query();
 console.log(`BTC Price: $${price.value}`);
 ```
@@ -96,7 +96,7 @@ x402-oracle-sdk/
 ├── 📄 package.json                           # v5.0.0
 │
 ├── 📁 contracts/                             # 23 Smart Contracts
-│   ├── x402Facilitator.sol                   # ⭐ x402 payment settlement (DEPLOYED)
+│   ├── x402Facilitator.sol                   # ⭐ x402 protocol payment settlement (DEPLOYED)
 │   ├── x402Oracle.sol                        # Core oracle with bounties
 │   ├── SimplePredictionMarket.sol            # Binary (yes/no) markets
 │   ├── MultiOutcomeMarket.sol                # 2-10 outcome markets
@@ -123,7 +123,7 @@ x402-oracle-sdk/
 │
 ├── 📁 src/sdk/                               # TypeScript SDK
 │   ├── MultiWalletx402Pool.ts                # ⭐ 10x parallel speedup
-│   ├── x402Client.ts                         # x402 payment client
+│   ├── x402Client.ts                         # x402 protocol payment client
 │   ├── x402-config.ts                        # Mainnet configuration
 │   ├── x402OracleClient.ts                   # Oracle interactions
 │   ├── PredictionMarketClient.ts             # Market interactions
@@ -183,16 +183,16 @@ x402-oracle-sdk/
 
 ### v5.0: x402 Oracle Infrastructure
 
-x402 Oracle Infrastructure v5.0 introduces **robust oracle infrastructure** that makes x402 payments more reliable by integrating Web2 APIs:
+x402 Oracle Infrastructure v5.0, built by **ORAQ**, introduces **robust oracle infrastructure** that makes x402 protocol payments more reliable by integrating Web2 APIs:
 
 ```
-Web2 API → Oracle Verification → x402 Payment → Data Response
+Web2 API → Oracle Verification → x402 Protocol Payment → Data Response
    (REST)      (TLS+SHA256)      (USDC)        (Verified Data)
 ```
 
 **Key Components:**
 
-1. **x402Facilitator.sol** - Smart contract for x402 payment settlement (1% platform fee)
+1. **x402Facilitator.sol** - Smart contract for x402 protocol payment settlement (1% platform fee)
 2. **MultiWalletx402Pool** - 10 worker wallets for parallel transactions (10x speedup)
 3. **x402-middleware.js** - Backend payment verification
 4. **Web2 API Integration** - Transform any REST API into a verified oracle
@@ -200,16 +200,16 @@ Web2 API → Oracle Verification → x402 Payment → Data Response
 
 ### Why x402 Oracle Infrastructure?
 
-**Traditional x402:**
+**Traditional x402 Protocol:**
 
 - ✅ HTTP 402 micropayments
 - ❌ Limited to basic data sources
 - ❌ No verification mechanisms
 - ❌ Single point of failure
 
-**x402 Oracle Infrastructure:**
+**x402 Oracle Infrastructure (by ORAQ):**
 
-- ✅ HTTP 402 micropayments with Web2 API integration
+- ✅ HTTP 402 protocol micropayments with Web2 API integration
 - ✅ Cryptographic verification (TLS + SHA256 + IPFS)
 - ✅ AI-powered API discovery and validation
 - ✅ Multi-source consensus and redundancy
@@ -224,7 +224,7 @@ Web2 API → Oracle Verification → x402 Payment → Data Response
 ### 1. Real-Time Price Feeds
 
 ```typescript
-// Transform CoinGecko API into verified x402 oracle
+// Transform CoinGecko API into verified x402 protocol oracle
 const priceOracle = await sdk.createOracle({
   name: "CoinGecko BTC Price",
   apiEndpoint: "https://api.coingecko.com/api/v3/simple/price",
@@ -232,7 +232,7 @@ const priceOracle = await sdk.createOracle({
   verification: "tls+sha256+ipfs",
 });
 
-// Query with x402 payment
+// Query with x402 protocol payment
 const price = await priceOracle.query();
 console.log(`BTC: $${price.value} (verified: ${price.verified})`);
 ```
@@ -240,7 +240,7 @@ console.log(`BTC: $${price.value} (verified: ${price.verified})`);
 ### 2. Weather Data APIs
 
 ```typescript
-// Transform OpenWeatherMap into x402 oracle
+// Transform OpenWeatherMap into x402 protocol oracle
 const weatherOracle = await sdk.createOracle({
   name: "OpenWeatherMap Current Weather",
   apiEndpoint: "https://api.openweathermap.org/data/2.5/weather",
@@ -256,7 +256,7 @@ console.log(`London: ${weather.main.temp}°C`);
 ### 3. Financial Data Integration
 
 ```typescript
-// Transform Alpha Vantage API into x402 oracle
+// Transform Alpha Vantage API into x402 protocol oracle
 const stockOracle = await sdk.createOracle({
   name: "Alpha Vantage Stock Price",
   apiEndpoint: "https://www.alphavantage.co/query",
@@ -322,7 +322,7 @@ console.log(`AAPL: $${stock.price}`);
 
 **v5.0 - x402 Oracle Infrastructure:**
 
-- **x402Facilitator** - x402 payment settlement with 1% platform fee ([View on BSCScan](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3))
+- **x402Facilitator** - x402 protocol payment settlement with 1% platform fee ([View on BSCScan](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3))
 
 ---
 
@@ -372,11 +372,11 @@ console.log(`AAPL: $${stock.price}`);
 | Create Oracle           | ~200K   | ~0.0006 BASE   | ~$0.36          |
 | Query Web2 API          | ~50K    | ~0.00015 BASE  | ~$0.09          |
 | Verify Data             | ~45K    | ~0.000135 BASE | ~$0.08          |
-| x402 Payment Settlement | ~180K   | ~0.00054 BASE  | ~$0.32          |
+| x402 Protocol Payment Settlement | ~180K   | ~0.00054 BASE  | ~$0.32          |
 | Batch API Queries       | ~35K ea | ~0.000105 BASE | ~$0.06          |
 | AI API Discovery        | ~100K   | ~0.0003 BASE   | ~$0.18          |
 
-**Total Cost:** ~$0.50 to create oracle + query API with x402
+**Total Cost:** ~$0.50 to create oracle + query API with x402 protocol
 
 ---
 
