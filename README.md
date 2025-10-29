@@ -2,9 +2,9 @@
 
 ![Sora Oracle Banner](./assets/sora-banner.png)
 
-# Sora Oracle SDK v5.0
+# x402 Oracle Infrastructure v5.0
 
-**Production-ready permissionless oracle SDK with HTTP 402 micropayments on BNB Chain**
+**Building Web2 APIs as Oracles to Make x402 More Robust on BNB Chain**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.20-blue.svg)](https://soliditylang.org/)
@@ -26,18 +26,20 @@
 
 ---
 
-## 🎯 What is Sora Oracle?
+## 🎯 What is x402 Oracle Infrastructure?
 
-Sora Oracle is a **fully permissionless oracle SDK** that lets you create prediction markets with trustless data feeds. No centralized oracles, no gatekeepers - just AI-powered API discovery, cryptographic verification, and s402 micropayments.
+x402 Oracle Infrastructure is a **robust oracle system** that transforms Web2 APIs into reliable data sources for x402 micropayments. We're building the missing piece that makes x402 truly robust by providing verified, real-time data feeds from traditional web APIs with cryptographic verification and seamless integration.
 
 ### Key Features
 
-✅ **Permissionless Oracle** - AI discovers and verifies APIs automatically  
-✅ **s402 Micropayments** - HTTP 402 payments using USDC on BNB Chain  
+✅ **Web2 API Integration** - Transform any REST API into a verified oracle  
+✅ **x402 Micropayments** - HTTP 402 payments using USDC on BNB Chain  
 ✅ **Multi-Wallet Parallelization** - 10x faster than sequential transactions  
-✅ **23 Smart Contracts** - Production-ready market types (binary, multi-outcome, AMM, orderbook, conditional)  
+✅ **23 Smart Contracts** - Production-ready oracle infrastructure  
 ✅ **TypeScript SDK** - React hooks for zero-boilerplate integration  
 ✅ **Mainnet Deployed** - Live on BNB Chain  
+✅ **Cryptographic Verification** - TLS + SHA256 + IPFS verification  
+✅ **AI-Powered Discovery** - Automatically discover and validate new APIs
 
 ---
 
@@ -49,29 +51,34 @@ Sora Oracle is a **fully permissionless oracle SDK** that lets you create predic
 npm install @sora-oracle/sdk
 ```
 
-### Create Your First Market
+### Create Your First x402 Oracle
 
 ```typescript
-import { SoraOracleSDK } from '@sora-oracle/sdk';
+import { x402OracleSDK } from "@sora-oracle/sdk";
 
-const sdk = new SoraOracleSDK({
+const sdk = new x402OracleSDK({
   chainId: 56, // BNB Chain Mainnet
-  rpcUrl: 'https://bsc-dataseed.binance.org/',
-  s402FacilitatorAddress: '0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3'
+  rpcUrl: "https://bsc-dataseed.binance.org/",
+  s402FacilitatorAddress: "0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3",
 });
 
-// Create a prediction market
-const market = await sdk.createMarket({
-  question: "Will BTC hit $100k by Dec 31, 2025?",
-  type: "binary",
-  deadline: "2025-12-31T23:59:59Z",
+// Transform a Web2 API into an x402 oracle
+const oracle = await sdk.createOracle({
+  name: "CoinGecko Price Oracle",
+  apiEndpoint: "https://api.coingecko.com/api/v3/simple/price",
+  parameters: {
+    ids: "bitcoin",
+    vs_currencies: "usd",
+  },
   payment: {
     token: "USDC",
-    amount: "0.05" // $0.05 USDC payment
-  }
+    amount: "0.01", // $0.01 USDC per query
+  },
 });
 
-console.log(`Market created: ${market.id}`);
+// Query the oracle with x402 payment
+const price = await oracle.query();
+console.log(`BTC Price: $${price.value}`);
 ```
 
 ---
@@ -173,34 +180,39 @@ sora-oracle-sdk/
 
 ## 🏗️ Architecture
 
-### v5.0: s402 Micropayment Protocol
+### v5.0: x402 Oracle Infrastructure
 
-Sora Oracle v5.0 introduces **s402** - a custom HTTP 402 micropayment system for BNB Chain:
+x402 Oracle Infrastructure v5.0 introduces **robust oracle infrastructure** that makes x402 payments more reliable by integrating Web2 APIs:
 
 ```
-User Signs Payment → s402 Middleware Verifies → API Responds → Settlement On-Chain
-     (EIP-2612)           (Payment Proof)          (Data)      (Multi-Wallet Pool)
+Web2 API → Oracle Verification → x402 Payment → Data Response
+   (REST)      (TLS+SHA256)      (USDC)        (Verified Data)
 ```
 
 **Key Components:**
 
-1. **S402Facilitator.sol** - Smart contract for payment settlement (1% platform fee)
+1. **S402Facilitator.sol** - Smart contract for x402 payment settlement (1% platform fee)
 2. **MultiWalletS402Pool** - 10 worker wallets for parallel transactions (10x speedup)
 3. **s402-middleware.js** - Backend payment verification
-4. **Permissionless Oracle** - AI-powered API discovery and verification
+4. **Web2 API Integration** - Transform any REST API into a verified oracle
+5. **AI-Powered Discovery** - Automatically discover and validate new APIs
 
-### Why s402 Instead of x402?
+### Why x402 Oracle Infrastructure?
 
-**x402 (Coinbase):**
-- ✅ Uses EIP-3009 (random nonces, true parallel)
-- ❌ Only works on Base, Ethereum (chains with native Circle USDC)
-- ❌ Doesn't work on BNB Chain (no EIP-3009 support)
+**Traditional x402:**
 
-**s402 (Sora):**
-- ✅ Uses EIP-2612 (works on BNB Chain)
-- ✅ Multi-wallet pool solves sequential nonce problem
-- ✅ Achieves 10x parallel speedup
-- ✅ Honest branding - we don't claim x402 compliance
+- ✅ HTTP 402 micropayments
+- ❌ Limited to basic data sources
+- ❌ No verification mechanisms
+- ❌ Single point of failure
+
+**x402 Oracle Infrastructure:**
+
+- ✅ HTTP 402 micropayments with Web2 API integration
+- ✅ Cryptographic verification (TLS + SHA256 + IPFS)
+- ✅ AI-powered API discovery and validation
+- ✅ Multi-source consensus and redundancy
+- ✅ Works on BNB Chain with EIP-2612
 
 **[Read Full Comparison →](./X402_VS_S402_COMPARISON.md)**
 
@@ -208,46 +220,56 @@ User Signs Payment → s402 Middleware Verifies → API Responds → Settlement 
 
 ## 💡 Use Cases
 
-### 1. Permissionless Data Markets
+### 1. Real-Time Price Feeds
 
 ```typescript
-// AI automatically discovers and verifies APIs
-const oracle = await sdk.createPermissionlessOracle({
-  question: "What's the current BTC price?",
-  sources: "auto", // AI discovers APIs
-  consensus: "median",
-  verification: "tls+sha256+ipfs"
+// Transform CoinGecko API into verified x402 oracle
+const priceOracle = await sdk.createOracle({
+  name: "CoinGecko BTC Price",
+  apiEndpoint: "https://api.coingecko.com/api/v3/simple/price",
+  parameters: { ids: "bitcoin", vs_currencies: "usd" },
+  verification: "tls+sha256+ipfs",
 });
 
-// Oracle queries multiple sources, verifies cryptographically
-const answer = await oracle.query();
-console.log(`BTC: $${answer.value} (confidence: ${answer.confidence}%)`);
+// Query with x402 payment
+const price = await priceOracle.query();
+console.log(`BTC: $${price.value} (verified: ${price.verified})`);
 ```
 
-### 2. Prediction Markets with s402
+### 2. Weather Data APIs
 
 ```typescript
-// Users pay $0.05 USDC to create markets
-const market = await sdk.createMarket({
-  question: "Will Ethereum merge happen in Q3?",
-  type: "binary",
-  payment: { token: "USDC", amount: "0.05" }
+// Transform OpenWeatherMap into x402 oracle
+const weatherOracle = await sdk.createOracle({
+  name: "OpenWeatherMap Current Weather",
+  apiEndpoint: "https://api.openweathermap.org/data/2.5/weather",
+  parameters: { q: "London", appid: "YOUR_API_KEY" },
+  payment: { token: "USDC", amount: "0.02" },
 });
 
-// Oracle automatically resolves using verified data
-await market.resolve(); // AI-powered settlement
+// Get weather data with micropayment
+const weather = await weatherOracle.query();
+console.log(`London: ${weather.main.temp}°C`);
 ```
 
-### 3. Multi-Outcome Markets
+### 3. Financial Data Integration
 
 ```typescript
-// Create election markets
-const election = await sdk.createMarket({
-  question: "Who wins 2024 election?",
-  type: "multi-outcome",
-  outcomes: ["Candidate A", "Candidate B", "Candidate C"],
-  payment: { token: "USDC", amount: "0.10" }
+// Transform Alpha Vantage API into x402 oracle
+const stockOracle = await sdk.createOracle({
+  name: "Alpha Vantage Stock Price",
+  apiEndpoint: "https://www.alphavantage.co/query",
+  parameters: {
+    function: "GLOBAL_QUOTE",
+    symbol: "AAPL",
+    apikey: "YOUR_API_KEY",
+  },
+  payment: { token: "USDC", amount: "0.03" },
 });
+
+// Get stock data with verified payment
+const stock = await stockOracle.query();
+console.log(`AAPL: $${stock.price}`);
 ```
 
 ---
@@ -257,10 +279,12 @@ const election = await sdk.createMarket({
 ### 23 Production-Ready Contracts
 
 **Core Oracle (v3):**
+
 - **SoraOracle** - Question/answer oracle with bounties
 - **PancakeTWAPOracle** - Manipulation-resistant TWAP pricing
 
 **Market Types (v3-v4):**
+
 - **SimplePredictionMarket** - Binary (yes/no) markets
 - **MultiOutcomeMarket** - 2-10 outcome markets
 - **OrderBookMarket** - Limit order book (institutional-grade)
@@ -270,44 +294,49 @@ const election = await sdk.createMarket({
 - **TimeSeriesMarket** - Statistical predictions
 
 **Automation (v4):**
+
 - **AutomatedMarketResolver** - AI-powered settlement
 - **AggregatedOracle** - Multi-source consensus
 - **ScheduledFeeds** - Automated oracle updates
 - **CrossChainBridge** - Multi-chain oracle data
 
 **Operations:**
+
 - **BatchOracleOperations** - Batch 20 questions (30% gas savings)
 - **BatchPayoutDistributor** - Efficient winner payouts
 - **DisputeResolution** - Stake-based challenges
 - **OracleReputationTracker** - Provider performance
 
 **Governance:**
+
 - **DAOGovernance** - Community voting
 - **OracleStaking** - Reputation and rewards
 - **SlashingMechanism** - Penalty system
 
 **Growth:**
+
 - **ReferralRewards** - Viral growth (5% fee sharing)
 - **MarketFactory** - Market registry with categories
 - **LiquidityIncentives** - Bootstrap new markets
 
 **v5.0 - s402 Payments:**
+
 - **S402Facilitator** - Payment settlement with 1% platform fee ([View on BSCScan](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3))
 
 ---
 
 ## 📊 Pricing
 
-### s402 Operation Costs
+### x402 Oracle Operation Costs
 
-| Operation | Price (USDC) | Description |
-|-----------|--------------|-------------|
-| Data Source Access | $0.03 | Query permissionless oracle |
-| Oracle Query | $0.01 | Single oracle question |
-| Market Creation | $0.05 | Create prediction market |
-| Market Resolution | $0.10 | Resolve market outcome |
-| Batch Query | $0.05 | Multiple oracle queries |
-| AI Resolution | $0.15 | GPT-4 powered settlement |
+| Operation              | Price (USDC) | Description                         |
+| ---------------------- | ------------ | ----------------------------------- |
+| Web2 API Query         | $0.01        | Single API data request             |
+| Verified Data Feed     | $0.03        | Cryptographically verified data     |
+| Multi-Source Consensus | $0.05        | Multiple API sources + consensus    |
+| AI API Discovery       | $0.02        | Auto-discover and validate new APIs |
+| Batch API Queries      | $0.05        | Multiple API requests               |
+| Real-Time Data Stream  | $0.10        | Continuous data feed                |
 
 **Platform Fee:** 1% of all transactions (adjustable by owner, max 10%)
 
@@ -337,16 +366,16 @@ const election = await sdk.createMarket({
 
 ## 🌊 Gas Costs (BNB Chain)
 
-| Operation | Gas | BNB (3 Gwei) | USD ($600 BNB) |
-|-----------|-----|--------------|----------------|
-| Create Binary Market | ~200K | ~0.0006 BNB | ~$0.36 |
-| Create Multi-Outcome | ~250K | ~0.00075 BNB | ~$0.45 |
-| Place Bet | ~50K | ~0.00015 BNB | ~$0.09 |
-| Claim Winnings | ~45K | ~0.000135 BNB | ~$0.08 |
-| s402 Payment Settlement | ~180K | ~0.00054 BNB | ~$0.32 |
-| Batch Oracle Operations | ~35K ea | ~0.000105 BNB | ~$0.06 |
+| Operation               | Gas     | BNB (3 Gwei)  | USD ($600 BNB) |
+| ----------------------- | ------- | ------------- | -------------- |
+| Create Oracle           | ~200K   | ~0.0006 BNB   | ~$0.36         |
+| Query Web2 API          | ~50K    | ~0.00015 BNB  | ~$0.09         |
+| Verify Data             | ~45K    | ~0.000135 BNB | ~$0.08         |
+| x402 Payment Settlement | ~180K   | ~0.00054 BNB  | ~$0.32         |
+| Batch API Queries       | ~35K ea | ~0.000105 BNB | ~$0.06         |
+| AI API Discovery        | ~100K   | ~0.0003 BNB   | ~$0.18         |
 
-**Total Cost:** ~$0.40 to create + settle a market with s402
+**Total Cost:** ~$0.50 to create oracle + query API with x402
 
 ---
 
@@ -450,29 +479,29 @@ Use it, fork it, modify it, sell it - whatever you want! All smart contracts are
 
 ---
 
-## 🌟 Why Sora Oracle?
+## 🌟 Why x402 Oracle Infrastructure?
+
+### vs. Traditional x402 Implementations
+
+| Feature                  | x402 Oracle Infrastructure | Basic x402              | Coinbase x402         |
+| ------------------------ | -------------------------- | ----------------------- | --------------------- |
+| **Web2 API Integration** | ✅ Any REST API            | ❌ Limited sources      | ❌ Limited sources    |
+| **Verification**         | ✅ TLS+SHA256+IPFS         | ❌ No verification      | ❌ Basic verification |
+| **AI Discovery**         | ✅ Auto API discovery      | ❌ Manual setup         | ❌ Manual setup       |
+| **Multi-Source**         | ✅ Consensus mechanism     | ❌ Single source        | ❌ Single source      |
+| **BNB Chain**            | ✅ Native support          | ❌ Not supported        | ❌ Base only          |
+| **Robustness**           | ✅ Redundant & verified    | ❌ Single point failure | ⚠️ Limited redundancy |
 
 ### vs. Traditional Oracles (Chainlink, UMA)
 
-| Feature | Sora Oracle | Chainlink | UMA |
-|---------|-------------|-----------|-----|
-| **Permissionless** | ✅ Anyone can add data | ❌ Whitelisted nodes | ⚠️ Token voting |
-| **AI-Powered** | ✅ GPT-4 discovery | ❌ Manual | ❌ Manual |
-| **Micropayments** | ✅ s402 ($0.01-0.15) | ❌ LINK tokens | ❌ UMA bonds |
-| **Multi-Source** | ✅ Automatic consensus | ⚠️ Node consensus | ⚠️ Optimistic |
-| **BNB Chain** | ✅ Native support | ✅ Supported | ⚠️ Limited |
-| **Verification** | ✅ TLS+SHA256+IPFS | ⚠️ Node reputation | ⚠️ Economic game |
-
-### vs. Prediction Market Platforms
-
-| Feature | Sora Oracle | Polymarket | Augur |
-|---------|-------------|------------|-------|
-| **Chain** | BNB (low fees) | Polygon | Ethereum |
-| **Oracle** | Permissionless | Centralized UMA | Decentralized |
-| **Market Types** | 8 types | Binary only | Binary + Categorical |
-| **Payments** | s402 (USDC) | Free | ETH gas |
-| **Orderbook** | ✅ Limit orders | ✅ Limit orders | ❌ Shares only |
-| **Mainnet** | ✅ Live | ✅ Live | ✅ Live |
+| Feature              | x402 Oracle Infrastructure | Chainlink            | UMA             |
+| -------------------- | -------------------------- | -------------------- | --------------- |
+| **x402 Payments**    | ✅ Native HTTP 402         | ❌ LINK tokens       | ❌ UMA bonds    |
+| **Web2 Integration** | ✅ Direct API access       | ⚠️ Node operators    | ⚠️ Limited      |
+| **Permissionless**   | ✅ Anyone can add APIs     | ❌ Whitelisted nodes | ⚠️ Token voting |
+| **AI-Powered**       | ✅ Auto discovery          | ❌ Manual            | ❌ Manual       |
+| **Micropayments**    | ✅ $0.01-0.15              | ❌ High costs        | ❌ High costs   |
+| **BNB Chain**        | ✅ Native support          | ✅ Supported         | ⚠️ Limited      |
 
 ---
 
@@ -488,13 +517,13 @@ Use it, fork it, modify it, sell it - whatever you want! All smart contracts are
 
 <div align="center">
 
-**Sora Oracle v5.0** - The first production-ready permissionless oracle with integrated micropayments 🚀
+**x402 Oracle Infrastructure v5.0** - Making x402 robust through Web2 API integration 🚀
 
-✅ Permissionless | ✅ AI-Powered | ✅ s402 Payments | ✅ BNB Chain | ✅ Mainnet Live
+✅ Web2 API Integration | ✅ x402 Micropayments | ✅ Cryptographic Verification | ✅ BNB Chain | ✅ Mainnet Live
 
-No gatekeepers. No permissions. Just secure, verifiable prediction markets.
+Building the missing piece that makes x402 truly robust with verified, real-time data feeds.
 
-Built by the community, for the community 🌐
+Transforming Web2 APIs into reliable oracles for the decentralized web 🌐
 
 **[Get Started →](./QUICK_START.md)** • **[View Contract →](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)** • **[Follow on 𝕏 →](https://x.com/SoraOracle)**
 
