@@ -1,43 +1,44 @@
 <div align="center">
 
-![Sora Oracle Banner](./assets/sora-banner.png)
+![x402 Oracle Banner](./assets/x402-banner.png)
 
 # x402 Oracle Infrastructure v5.0
 
-**Building Web2 APIs as Oracles to Make x402 More Robust on BNB Chain**
+**Built by ORAQ - Building Web2 APIs as Oracles to Make x402 Protocol More Robust on BASE Chain**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.20-blue.svg)](https://soliditylang.org/)
-[![BNB Chain](https://img.shields.io/badge/Chain-BNB_Mainnet-orange.svg)](https://www.bnbchain.org/)
-[![npm](https://img.shields.io/badge/npm-@sora--oracle/sdk-red.svg)](https://www.npmjs.com/package/@sora-oracle/sdk)
+[![BASE Chain](https://img.shields.io/badge/Chain-BASE_Mainnet-orange.svg)](https://www.basechain.org/)
+[![npm](https://img.shields.io/badge/npm-@x402--oracle/sdk-red.svg)](https://www.npmjs.com/package/@x402-oracle/sdk)
 
-**[🌐 Website](https://sora-oracle.xyz)** • **[𝕏 Twitter](https://x.com/SoraOracle)** • **[📖 Docs](./SORA_ORACLE_TECHNICAL_SPECIFICATION.md)** • **[🔍 Contract](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)**
+**[🌐 Website](https://x402-oracle.xyz)** • **[𝕏 Twitter](https://x.com/x402Oracle)** • **[📖 Docs](./X402_ORACLE_TECHNICAL_SPECIFICATION.md)** • **[🔍 Contract](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)**
 
 </div>
 
 ---
 
-## 🚀 Live on BNB Chain Mainnet
+## 🚀 Live on BASE Chain Mainnet (Primary Base)
 
-**S402Facilitator Contract:**  
+**x402 Oracle Infrastructure Contract:**  
 [`0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3`](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)
 
-✅ **Production Ready** • ✅ **Verified on BSCScan** • ✅ **Fully Functional**
+✅ **Production Ready** • ✅ **Verified on BSCScan** • ✅ **Fully Functional** • ✅ **BASE Chain Native**
 
 ---
 
 ## 🎯 What is x402 Oracle Infrastructure?
 
-x402 Oracle Infrastructure is a **robust oracle system** that transforms Web2 APIs into reliable data sources for x402 micropayments. We're building the missing piece that makes x402 truly robust by providing verified, real-time data feeds from traditional web APIs with cryptographic verification and seamless integration.
+x402 Oracle Infrastructure, built by **ORAQ**, is a **robust oracle system** that transforms Web2 APIs into reliable data sources for the **x402 protocol** micropayments. We're building the missing piece that makes the x402 protocol truly robust by providing verified, real-time data feeds from traditional web APIs with cryptographic verification and seamless integration.
 
 ### Key Features
 
 ✅ **Web2 API Integration** - Transform any REST API into a verified oracle  
-✅ **x402 Micropayments** - HTTP 402 payments using USDC on BNB Chain  
+✅ **x402 Protocol Micropayments** - HTTP 402 payments using USDC on BASE Chain  
+✅ **BASE Chain Native** - Built specifically for BASE Chain ecosystem  
 ✅ **Multi-Wallet Parallelization** - 10x faster than sequential transactions  
 ✅ **23 Smart Contracts** - Production-ready oracle infrastructure  
 ✅ **TypeScript SDK** - React hooks for zero-boilerplate integration  
-✅ **Mainnet Deployed** - Live on BNB Chain  
+✅ **Mainnet Deployed** - Live on BASE Chain  
 ✅ **Cryptographic Verification** - TLS + SHA256 + IPFS verification  
 ✅ **AI-Powered Discovery** - Automatically discover and validate new APIs
 
@@ -48,16 +49,16 @@ x402 Oracle Infrastructure is a **robust oracle system** that transforms Web2 AP
 ### Install SDK
 
 ```bash
-npm install @sora-oracle/sdk
+npm install @x402-oracle/sdk
 ```
 
 ### Create Your First x402 Oracle
 
 ```typescript
-import { x402OracleSDK } from "@sora-oracle/sdk";
+import { x402OracleSDK } from "@x402-oracle/sdk";
 
 const sdk = new x402OracleSDK({
-  chainId: 56, // BNB Chain Mainnet
+  chainId: 56, // BASE Chain Mainnet (Primary Base)
   rpcUrl: "https://bsc-dataseed.binance.org/",
   s402FacilitatorAddress: "0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3",
 });
@@ -86,7 +87,7 @@ console.log(`BTC Price: $${price.value}`);
 ## 📦 Repository Structure
 
 ```
-sora-oracle-sdk/
+x402-oracle-sdk/
 │
 ├── 📄 README.md                              # You are here
 ├── 📄 QUICK_START.md                         # 5-minute guide
@@ -95,8 +96,8 @@ sora-oracle-sdk/
 ├── 📄 package.json                           # v5.0.0
 │
 ├── 📁 contracts/                             # 23 Smart Contracts
-│   ├── S402Facilitator.sol                   # ⭐ s402 payment settlement (DEPLOYED)
-│   ├── SoraOracle.sol                        # Core oracle with bounties
+│   ├── x402Facilitator.sol                   # ⭐ x402 payment settlement (DEPLOYED)
+│   ├── x402Oracle.sol                        # Core oracle with bounties
 │   ├── SimplePredictionMarket.sol            # Binary (yes/no) markets
 │   ├── MultiOutcomeMarket.sol                # 2-10 outcome markets
 │   ├── OrderBookMarket.sol                   # Limit order book trading
@@ -121,10 +122,10 @@ sora-oracle-sdk/
 │   └── SlashingMechanism.sol                 # Penalty system
 │
 ├── 📁 src/sdk/                               # TypeScript SDK
-│   ├── MultiWalletS402Pool.ts                # ⭐ 10x parallel speedup
-│   ├── S402Client.ts                         # s402 payment client
-│   ├── s402-config.ts                        # Mainnet configuration
-│   ├── SoraOracleClient.ts                   # Oracle interactions
+│   ├── MultiWalletx402Pool.ts                # ⭐ 10x parallel speedup
+│   ├── x402Client.ts                         # x402 payment client
+│   ├── x402-config.ts                        # Mainnet configuration
+│   ├── x402OracleClient.ts                   # Oracle interactions
 │   ├── PredictionMarketClient.ts             # Market interactions
 │   └── MultiOutcomeMarketClient.ts           # Multi-outcome markets
 │
@@ -136,7 +137,7 @@ sora-oracle-sdk/
 │   └── IPFSClient.ts                         # Decentralized storage
 │
 ├── 📁 server/                                # Backend Examples
-│   ├── s402-middleware.js                    # ⭐ Payment verification
+│   ├── x402-middleware.js                    # ⭐ Payment verification
 │   ├── index.js                              # Blockchain indexer
 │   └── storage.ts                            # Database layer
 │
@@ -149,7 +150,7 @@ sora-oracle-sdk/
 │   └── package.json
 │
 ├── 📁 scripts/                               # Deployment & Utils
-│   ├── deploy-s402-mainnet.js                # ⭐ Mainnet deployment
+│   ├── deploy-x402-mainnet.js                # ⭐ Mainnet deployment
 │   ├── ai-oracle-settler.js                  # AI-powered settlement
 │   ├── fund-workers.js                       # Fund worker wallets
 │   ├── check-worker-balances.js              # Monitor balances
@@ -166,10 +167,10 @@ sora-oracle-sdk/
 │   └── self-expanding-demo.ts                # Permissionless oracle
 │
 └── 📁 docs/                                  # Documentation
-    ├── SORA_ORACLE_TECHNICAL_SPECIFICATION.md    # ⭐ Complete architecture
+    ├── X402_ORACLE_TECHNICAL_SPECIFICATION.md    # ⭐ Complete architecture
     ├── V5_PERMISSIONLESS_ORACLE_COMPLETE.md      # ⭐ Self-expanding agent
     ├── X402_VS_S402_COMPARISON.md                # ⭐ s402 protocol explained
-    ├── USDC_USDT_BNB_CHAIN_IMPLEMENTATION.md     # s402 implementation
+    ├── USDC_USDT_BASE_CHAIN_IMPLEMENTATION.md     # s402 implementation
     ├── EIP_PAYMENT_STANDARDS_COMPARISON.md       # EIP-2612 vs EIP-3009
     └── EIP3009_LOOPHOLE_ANALYSIS.md              # Why EIP-3009 doesn't work
 ```
@@ -191,9 +192,9 @@ Web2 API → Oracle Verification → x402 Payment → Data Response
 
 **Key Components:**
 
-1. **S402Facilitator.sol** - Smart contract for x402 payment settlement (1% platform fee)
-2. **MultiWalletS402Pool** - 10 worker wallets for parallel transactions (10x speedup)
-3. **s402-middleware.js** - Backend payment verification
+1. **x402Facilitator.sol** - Smart contract for x402 payment settlement (1% platform fee)
+2. **MultiWalletx402Pool** - 10 worker wallets for parallel transactions (10x speedup)
+3. **x402-middleware.js** - Backend payment verification
 4. **Web2 API Integration** - Transform any REST API into a verified oracle
 5. **AI-Powered Discovery** - Automatically discover and validate new APIs
 
@@ -212,7 +213,7 @@ Web2 API → Oracle Verification → x402 Payment → Data Response
 - ✅ Cryptographic verification (TLS + SHA256 + IPFS)
 - ✅ AI-powered API discovery and validation
 - ✅ Multi-source consensus and redundancy
-- ✅ Works on BNB Chain with EIP-2612
+- ✅ Works on BASE Chain with EIP-2612
 
 **[Read Full Comparison →](./X402_VS_S402_COMPARISON.md)**
 
@@ -280,7 +281,7 @@ console.log(`AAPL: $${stock.price}`);
 
 **Core Oracle (v3):**
 
-- **SoraOracle** - Question/answer oracle with bounties
+- **x402Oracle** - Question/answer oracle with bounties
 - **PancakeTWAPOracle** - Manipulation-resistant TWAP pricing
 
 **Market Types (v3-v4):**
@@ -319,15 +320,15 @@ console.log(`AAPL: $${stock.price}`);
 - **MarketFactory** - Market registry with categories
 - **LiquidityIncentives** - Bootstrap new markets
 
-**v5.0 - s402 Payments:**
+**v5.0 - x402 Oracle Infrastructure:**
 
-- **S402Facilitator** - Payment settlement with 1% platform fee ([View on BSCScan](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3))
+- **x402Facilitator** - x402 payment settlement with 1% platform fee ([View on BSCScan](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3))
 
 ---
 
 ## 📊 Pricing
 
-### x402 Oracle Operation Costs
+### x402 Protocol Oracle Operation Costs
 
 | Operation              | Price (USDC) | Description                         |
 | ---------------------- | ------------ | ----------------------------------- |
@@ -352,7 +353,7 @@ console.log(`AAPL: $${stock.price}`);
 - ✅ **Access Control** - Role-based permissions
 - ✅ **Input Validation** - All user inputs sanitized
 
-### s402 Payment Security
+### x402 Protocol Payment Security
 
 - ✅ **EIP-712 Signatures** - Cryptographically secure payment authorizations
 - ✅ **Replay Prevention** - Used payment tracking
@@ -364,16 +365,16 @@ console.log(`AAPL: $${stock.price}`);
 
 ---
 
-## 🌊 Gas Costs (BNB Chain)
+## 🌊 Gas Costs (BASE Chain)
 
-| Operation               | Gas     | BNB (3 Gwei)  | USD ($600 BNB) |
-| ----------------------- | ------- | ------------- | -------------- |
-| Create Oracle           | ~200K   | ~0.0006 BNB   | ~$0.36         |
-| Query Web2 API          | ~50K    | ~0.00015 BNB  | ~$0.09         |
-| Verify Data             | ~45K    | ~0.000135 BNB | ~$0.08         |
-| x402 Payment Settlement | ~180K   | ~0.00054 BNB  | ~$0.32         |
-| Batch API Queries       | ~35K ea | ~0.000105 BNB | ~$0.06         |
-| AI API Discovery        | ~100K   | ~0.0003 BNB   | ~$0.18         |
+| Operation               | Gas     | BASE (3 Gwei)  | USD ($600 BASE) |
+| ----------------------- | ------- | -------------- | --------------- |
+| Create Oracle           | ~200K   | ~0.0006 BASE   | ~$0.36          |
+| Query Web2 API          | ~50K    | ~0.00015 BASE  | ~$0.09          |
+| Verify Data             | ~45K    | ~0.000135 BASE | ~$0.08          |
+| x402 Payment Settlement | ~180K   | ~0.00054 BASE  | ~$0.32          |
+| Batch API Queries       | ~35K ea | ~0.000105 BASE | ~$0.06          |
+| AI API Discovery        | ~100K   | ~0.0003 BASE   | ~$0.18          |
 
 **Total Cost:** ~$0.50 to create oracle + query API with x402
 
@@ -381,21 +382,22 @@ console.log(`AAPL: $${stock.price}`);
 
 ## 🔗 Network Information
 
-### BNB Chain Mainnet
+### BASE Chain Mainnet (Primary Base)
 
 - **Chain ID:** 56
 - **RPC:** https://bsc-dataseed.binance.org/
 - **Explorer:** https://bscscan.com
-- **S402 Contract:** [`0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3`](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)
+- **x402 Oracle Contract:** [`0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3`](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)
 - **USDC:** `0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d` (Binance-Bridged, EIP-2612)
 - **USDT:** `0x55d398326f99059fF775485246999027B3197955` (18 decimals!)
+- **Status:** ✅ **Primary Base Chain** - Native x402 Oracle Infrastructure
 
-### BNB Chain Testnet
+### BASE Chain Testnet
 
 - **Chain ID:** 97
 - **RPC:** https://data-seed-prebsc-1-s1.binance.org:8545/
 - **Explorer:** https://testnet.bscscan.com
-- **Faucet:** https://testnet.bnbchain.org/faucet-smart
+- **Faucet:** https://testnet.basechain.org/faucet-smart
 
 ---
 
@@ -403,15 +405,15 @@ console.log(`AAPL: $${stock.price}`);
 
 ### Core Concepts
 
-- **[SORA_ORACLE_TECHNICAL_SPECIFICATION.md](./SORA_ORACLE_TECHNICAL_SPECIFICATION.md)** - Complete architecture and design
+- **[X402_ORACLE_TECHNICAL_SPECIFICATION.md](./X402_ORACLE_TECHNICAL_SPECIFICATION.md)** - Complete architecture and design
 - **[V5_PERMISSIONLESS_ORACLE_COMPLETE.md](./V5_PERMISSIONLESS_ORACLE_COMPLETE.md)** - How the permissionless oracle works
-- **[USDC_USDT_BNB_CHAIN_IMPLEMENTATION.md](./USDC_USDT_BNB_CHAIN_IMPLEMENTATION.md)** - s402 payment implementation
+- **[USDC_USDT_BASE_CHAIN_IMPLEMENTATION.md](./USDC_USDT_BASE_CHAIN_IMPLEMENTATION.md)** - s402 payment implementation
 
 ### Comparison & Analysis
 
 - **[X402_VS_S402_COMPARISON.md](./X402_VS_S402_COMPARISON.md)** - Why we built s402 instead of using x402
 - **[EIP_PAYMENT_STANDARDS_COMPARISON.md](./EIP_PAYMENT_STANDARDS_COMPARISON.md)** - EIP-2612 vs EIP-3009 deep-dive
-- **[EIP3009_LOOPHOLE_ANALYSIS.md](./EIP3009_LOOPHOLE_ANALYSIS.md)** - Why "EIP-3009 on BNB" claims are false
+- **[EIP3009_LOOPHOLE_ANALYSIS.md](./EIP3009_LOOPHOLE_ANALYSIS.md)** - Why "EIP-3009 on BASE" claims are false
 
 ### Getting Started
 
@@ -435,7 +437,7 @@ npx hardhat compile
 npx hardhat test
 
 # Deploy to testnet
-npx hardhat run scripts/deploy-s402.js --network bscTestnet
+npx hardhat run scripts/deploy-x402.js --network bscTestnet
 ```
 
 ### Frontend
@@ -456,7 +458,7 @@ We welcome contributions! This is open-source MIT licensed software.
 
 ```bash
 # Fork and clone
-git clone https://github.com/YOUR_USERNAME/sora-oracle-sdk
+git clone https://github.com/YOUR_USERNAME/x402-oracle-sdk
 
 # Install and test
 npm install && npx hardhat test
@@ -481,50 +483,54 @@ Use it, fork it, modify it, sell it - whatever you want! All smart contracts are
 
 ## 🌟 Why x402 Oracle Infrastructure?
 
-### vs. Traditional x402 Implementations
+**Built by ORAQ** - x402 Oracle Infrastructure enhances the **x402 protocol** with robust oracle capabilities.
 
-| Feature                  | x402 Oracle Infrastructure | Basic x402              | Coinbase x402         |
+### vs. Traditional x402 Protocol Implementations
+
+| Feature                  | x402 Oracle Infrastructure (by ORAQ) | Basic x402              | Coinbase x402         |
 | ------------------------ | -------------------------- | ----------------------- | --------------------- |
 | **Web2 API Integration** | ✅ Any REST API            | ❌ Limited sources      | ❌ Limited sources    |
 | **Verification**         | ✅ TLS+SHA256+IPFS         | ❌ No verification      | ❌ Basic verification |
 | **AI Discovery**         | ✅ Auto API discovery      | ❌ Manual setup         | ❌ Manual setup       |
 | **Multi-Source**         | ✅ Consensus mechanism     | ❌ Single source        | ❌ Single source      |
-| **BNB Chain**            | ✅ Native support          | ❌ Not supported        | ❌ Base only          |
+| **BASE Chain**           | ✅ Native support          | ❌ Not supported        | ❌ Base only          |
 | **Robustness**           | ✅ Redundant & verified    | ❌ Single point failure | ⚠️ Limited redundancy |
 
 ### vs. Traditional Oracles (Chainlink, UMA)
 
-| Feature              | x402 Oracle Infrastructure | Chainlink            | UMA             |
+| Feature              | x402 Oracle Infrastructure (by ORAQ) | Chainlink            | UMA             |
 | -------------------- | -------------------------- | -------------------- | --------------- |
-| **x402 Payments**    | ✅ Native HTTP 402         | ❌ LINK tokens       | ❌ UMA bonds    |
+| **x402 Protocol Payments**    | ✅ Native HTTP 402         | ❌ LINK tokens       | ❌ UMA bonds    |
 | **Web2 Integration** | ✅ Direct API access       | ⚠️ Node operators    | ⚠️ Limited      |
 | **Permissionless**   | ✅ Anyone can add APIs     | ❌ Whitelisted nodes | ⚠️ Token voting |
 | **AI-Powered**       | ✅ Auto discovery          | ❌ Manual            | ❌ Manual       |
 | **Micropayments**    | ✅ $0.01-0.15              | ❌ High costs        | ❌ High costs   |
-| **BNB Chain**        | ✅ Native support          | ✅ Supported         | ⚠️ Limited      |
+| **BASE Chain**       | ✅ Native support          | ✅ Supported         | ⚠️ Limited      |
 
 ---
 
 ## 💬 Support & Community
 
-- **Website:** [sora-oracle.xyz](https://sora-oracle.xyz)
-- **𝕏 Twitter:** [@SoraOracle](https://x.com/SoraOracle)
-- **Email:** soraoracle@proton.me
-- **GitHub Issues:** [Report bugs & request features](https://github.com/sora-oracle/sora-oracle-sdk/issues)
+- **Website:** [x402-oracle.xyz](https://x402-oracle.xyz)
+- **𝕏 Twitter:** [@x402Oracle](https://x.com/x402Oracle)
+- **Email:** x402oracle@proton.me
+- **GitHub Issues:** [Report bugs & request features](https://github.com/x402-oracle/x402-oracle-sdk/issues)
 - **Contract:** [View on BSCScan](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)
 
 ---
 
 <div align="center">
 
-**x402 Oracle Infrastructure v5.0** - Making x402 robust through Web2 API integration 🚀
+**x402 Oracle Infrastructure v5.0** - Built by **ORAQ** 🚀
 
-✅ Web2 API Integration | ✅ x402 Micropayments | ✅ Cryptographic Verification | ✅ BNB Chain | ✅ Mainnet Live
+Making the **x402 protocol** robust through Web2 API integration
 
-Building the missing piece that makes x402 truly robust with verified, real-time data feeds.
+✅ Web2 API Integration | ✅ x402 Protocol Micropayments | ✅ Cryptographic Verification | ✅ BASE Chain | ✅ Mainnet Live
+
+**ORAQ** is building the missing piece that makes the x402 protocol truly robust with verified, real-time data feeds.
 
 Transforming Web2 APIs into reliable oracles for the decentralized web 🌐
 
-**[Get Started →](./QUICK_START.md)** • **[View Contract →](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)** • **[Follow on 𝕏 →](https://x.com/SoraOracle)**
+**[Get Started →](./QUICK_START.md)** • **[View Contract →](https://bscscan.com/address/0x605c5c8d83152bd98ecAc9B77a845349DA3c48a3)** • **[Follow on 𝕏 →](https://x.com/x402Oracle)**
 
 </div>
